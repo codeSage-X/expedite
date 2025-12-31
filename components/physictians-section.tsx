@@ -13,67 +13,25 @@ interface Location {
 }
 
 const locations: Location[] = [
-  {
-    id: 1,
-    name: "North Central Florida",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
-  {
-    id: 2,
-    name: "Central Texas",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
-  {
-    id: 3,
-    name: "North California",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
-  {
-    id: 4,
-    name: "Arizona",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
-  // Duplicates for looping
-  {
-    id: 5,
-    name: "North Central Florida",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
-  {
-    id: 6,
-    name: "Central Texas",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
-  {
-    id: 7,
-    name: "North California",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
-  {
-    id: 8,
-    name: "Arizona",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
-  },
+  { id: 1, name: "North Central Florida", image: "/florida.jpg" },
+  { id: 2, name: "Central Texas", image: "/texas.jpg" },
+  { id: 3, name: "North California", image: "/california.jpg" },
+  { id: 4, name: "Arizona", image: "/arizona.jpg" },
+  { id: 5, name: "North Central Florida", image: "/florida.jpg" },
+  { id: 6, name: "Central Texas", image: "/texas.jpg" },
+  { id: 7, name: "North California", image: "/california.jpg" },
+  { id: 8, name: "Arizona", image: "/arizona.jpg" },
 ]
 
 export function PhysiciansSection() {
   const [api, setApi] = useState<EmblaCarouselType | undefined>()
 
-useEffect(() => {
-  if (!api) return;
-
-  const handleSelect = () => {
-    // Auto-loop effect (or any logic you want)
-  };
-
-  api.on("select", handleSelect);
-
-  // ✅ Clean up correctly with a void return
-  return () => {
-    api.off("select", handleSelect);
-  };
-}, [api]);
-
+  useEffect(() => {
+    if (!api) return
+    const handleSelect = () => {}
+    api.on("select", handleSelect)
+    return () => { api.off("select", handleSelect) }
+  }, [api])
 
   return (
     <section className="w-full bg-[#121212] py-16 sm:py-20 md:py-24 lg:py-28">
@@ -84,7 +42,6 @@ useEffect(() => {
             The physicians who have worked with us loved these{" "}
             <span className="text-[#F6E58B]">locations</span>.
           </h2>
-
           <div className="flex gap-3 sm:gap-4">
             <button
               onClick={() => api?.scrollPrev()}
@@ -106,10 +63,7 @@ useEffect(() => {
         {/* Carousel */}
         <div className="w-full">
           <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
+            opts={{ align: "start", loop: true }}
             setApi={setApi}
             className="w-full"
           >
@@ -119,24 +73,31 @@ useEffect(() => {
                   key={location.id}
                   className="pl-2 sm:pl-3 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                 >
-                  <div className="group relative rounded-2xl overflow-hidden bg-[#1f1f1f] hover:scale-[1.02] transition-transform duration-500">
+                  <div className="group relative bg-[#1f1f1f] rounded-2xl overflow-hidden md:hover:scale-[1.02] transition-transform duration-500">
                     {/* Image */}
                     <div className="relative w-full h-56 sm:h-64 md:h-72 lg:h-80">
                       <Image
                         src={location.image}
                         alt={location.name}
                         fill
-                        className="object-cover rounded-2xl"
+                        className="object-cover"
                       />
                     </div>
 
-                    {/* Overlay + Text */}
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+                    {/* Hover Overlay - Hidden on mobile, shown on md+ */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:flex items-end">
                       <div className="p-4 sm:p-6">
                         <h3 className="text-lg sm:text-xl font-semibold text-white font-outfit">
                           {location.name}
                         </h3>
                       </div>
+                    </div>
+
+                    {/* Mobile Text - Always visible on mobile, hidden on md+ */}
+                    <div className="p-4 md:hidden inset-0 bg-black/30 absolute bottom-0 w-full">
+                      <h3 className="text-lg font-semibold text-white font-outfit">
+                        {location.name}
+                      </h3>
                     </div>
                   </div>
                 </CarouselItem>
