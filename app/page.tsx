@@ -34,14 +34,14 @@ export default function Home() {
 
       {/* Hero Section */}
      <section
-  className="relative bg_img w-full h-[100vh] md:h-[60vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh] bg-contain bg-center bg-no-repeat overflow-hidden pt-24 sm:pt-0"
+  className="relative inset-0   bg_img w-full h-[80vh] md:h-[60vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh] bg-contain bg-center bg-no-repeat overflow-hidden pt-24 sm:pt-0"
 >
   {/* Overlay gradient for text readability */}
   <div className="absolute inset-0 to-transparent"></div>
 
   <div className="relative z-10 h-full flex flex-col justify-center w-full">
-    <div className="max-w-screen-2xl mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 py-12 sm:py-0">
-      <div className="max-w-xl md:max-w-2xl">
+    <div className="max-w-screen-2xl mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 py-12 sm:py-0 ">
+      <div className="max-w-xl md:max-w-2xl  ">
         <h1 className="outfit-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black mb-4 sm:mb-6 md:mb-8 leading-tight text-balance">
           Practice medicine See the world On your terms
         </h1>
