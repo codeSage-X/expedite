@@ -99,10 +99,10 @@ export function Navbar() {
         {isOpen && (
           <div 
             ref={mobileMenuRef}
-            className="absolute top-full left-0 right-0 bg-[#1a1a1a] md:hidden flex flex-col gap-4 p-6 shadow-lg"
+            className="absolute top-full left-0 right-0 bg-[#1a1a1a] md:hidden flex flex-col gap-4 p-6 shadow-lg z-50 pointer-events-auto"
           >
             <Link 
-              href="/#Home" 
+              href="/#home" 
               className="text-white satoshi hover:text-yellow-100 transition"
               onClick={handleClose}
             >
@@ -116,14 +116,14 @@ export function Navbar() {
               Why Choose Us
             </Link>
             <Link 
-              href="about" 
+              href="/about" 
               className="text-white satoshi hover:text-yellow-100 transition"
               onClick={handleClose}
             >
               About Us
             </Link>
             <Link
-              href="contact"
+              href="/contact"
               className="bg-[#C29343] hover:bg-yellow-700 text-white px-4 py-2 rounded-[10px] font-semibold flex items-center gap-2 transition font-outfit w-full justify-center"
               onClick={handleClose}
             >

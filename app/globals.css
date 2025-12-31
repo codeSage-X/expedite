@@ -237,7 +237,7 @@ body {
   }
 
    .bg_img {
-  background-image: url('../public/bg_sm.png');
+  background-image: url('../public/bgd.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

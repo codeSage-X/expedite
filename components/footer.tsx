@@ -5,18 +5,18 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white py-12 sm:py-16 md:py-20 lg:py-24">
+    <footer className="relative bg-black text-white py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-screen-2xl px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="grid grid-cols-2 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
           {/* Left Column - Navigation Links */}
           <div className="flex flex-col gap-3">
-            <Link href="/" className="text-sm md:text-base font-satoshi hover:text-yellow-500 transition">
+            <Link href="/" className="text-sm md:text-base font-bold font-satoshi hover:text-yellow-500 transition ">
               Home
             </Link>
-            <Link href="/about" className="text-sm md:text-base font-satoshi hover:text-yellow-500 transition">
+            <Link href="/about" className="text-sm md:text-base font-bold -mt-2 font-satoshi hover:text-yellow-500 transition">
               About
             </Link>
-            <Link href="/contact" className="text-sm md:text-base font-satoshi hover:text-yellow-500 transition">
+            <Link href="/contact" className="text-sm md:text-base font-bold -mt-2 font-satoshi hover:text-yellow-500 transition">
               Contact us
             </Link>
           </div>

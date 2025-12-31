@@ -37,7 +37,7 @@ export default function Home() {
   className="relative inset-0   bg_img w-full h-[80vh] md:h-[60vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh] bg-contain bg-center bg-no-repeat overflow-hidden pt-24 sm:pt-0"
 >
   {/* Overlay gradient for text readability */}
-  <div className="absolute inset-0 to-transparent"></div>
+  <div className="absolute inset-0 to-transparent pointer-events-none"></div>
 
   <div className="relative z-10 h-full flex flex-col justify-center w-full">
     <div className="max-w-screen-2xl mx-auto w-full px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 py-12 sm:py-0 ">
