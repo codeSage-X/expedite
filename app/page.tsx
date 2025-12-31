@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* Hero Section */}
      <section
-  className="relative bg_img w-full h-[60vh] md:h-[60vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh] bg-contain bg-center bg-no-repeat overflow-hidden pt-24 sm:pt-0"
+  className="relative bg_img w-full h-[100vh] md:h-[60vh] lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh] bg-contain bg-center bg-no-repeat overflow-hidden pt-24 sm:pt-0"
 >
   {/* Overlay gradient for text readability */}
   <div className="absolute inset-0 to-transparent"></div>
