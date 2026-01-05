@@ -3,23 +3,41 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY
+
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not set')
+      return NextResponse.json(
+        { error: 'Email service not configured' },
+        { status: 500 }
+      )
+    }
+
+    const resend = new Resend(apiKey)
     const { fullName, specialty, email, phone, additionalDetails } = await request.json()
 
     // Validate required fields
-    if (!fullName || !email) {
-      return NextResponse.json(
-        { error: 'Full name and email are required' },
-        { status: 400 }
-      )
+    if (!fullName || !fullName.trim()) {
+      return NextResponse.json({ error: 'Full name is required' }, { status: 400 })
+    }
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ error: 'Valid email is required' }, { status: 400 })
+    }
+
+    if (!specialty || !specialty.trim()) {
+      return NextResponse.json({ error: 'Specialty is required' }, { status: 400 })
+    }
+
+    if (!phone || phone.replace(/[\s\-\(\)]/g, '').length < 10) {
+      return NextResponse.json({ error: 'Valid phone number is required' }, { status: 400 })
     }
 
     const { data, error } = await resend.emails.send({
       from: 'ExpedMD Contact <onboarding@resend.dev>', // Update this with your verified domain
-      to: ['contact@expedmd.com'], // Your receiving email
+      to: ['wisdomjohnikoi@gmail.com'], // Your receiving email
       replyTo: email,
       subject: `New Contact Form Submission from ${fullName}`,
       html: `
