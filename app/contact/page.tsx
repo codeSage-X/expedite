@@ -1,13 +1,11 @@
 "use client"
 
 import type React from "react"
-
-
 import Image from "next/image"
 import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import {Mail} from "lucide-react"
+import { Mail } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -35,29 +33,23 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section */}
-        {/* <section
-      className="  relative h-[25vh] md:h-[40vh] lg:h-[40vh] xl:h-[60vh] bg-[#121212]  bg-contain  bg-center bg-no-repeat flex items-center"
-      style={{
-        backgroundImage: 'url("/about.png")',
-      }}
-    ></section> */}
-      <section className="relative py-20 px-6 bg-[#121212] mt-8  h-[25vh] md:h-[40vh] lg:h-[40vh] xl:h-[60vh] bg-[#121212]  bg-contain  bg-center bg-no-repeat"
+      <section
+        className="relative py-20 px-6 bg-[#121212] mt-20 md:mt-24 h-[25vh] md:h-[40vh] lg:h-[40vh] xl:h-[60vh] bg-contain bg-center bg-no-repeat"
         style={{
-        backgroundImage: 'url("/contact.png")',
-      }}>
-       
-
-        <div className="relative max-w-7xl mx-auto z-10 h-full flex flex-col justify-center ">
+          backgroundImage: 'url("/contact.png")',
+        }}
+      >
+        <div className="relative max-w-7xl mx-auto z-10 h-full flex flex-col justify-center">
           <div
-  className="inline-block w-34 px-6 py-3 rounded-[15px] text-base font-medium mb-6 border border-gray-600/50"
-  style={{ 
-    backgroundColor: "rgba(47, 47, 47, 0.5)", 
-    color: "#FFFFFF",
-    backdropFilter: "blur(10px)"
-  }}
->
-  Contact Us
-</div>
+            className="inline-block w-34 px-6 py-3 rounded-[15px] text-base font-medium mb-6 border border-gray-600/50"
+            style={{
+              backgroundColor: "rgba(47, 47, 47, 0.5)",
+              color: "#FFFFFF",
+              backdropFilter: "blur(10px)",
+            }}
+          >
+            Contact Us
+          </div>
           <h1 className="text-5xl font-bold text-white mb-4">We are always available</h1>
         </div>
       </section>
@@ -74,14 +66,13 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-8">
               {/* Email Section */}
-              <div className="p-8 rounded-2xl border border-gray-700" >
+              <div className="p-8 rounded-2xl border border-gray-700">
                 <div className="flex items-center gap-4 mb-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl"
                     style={{ backgroundColor: "#F6E58B", color: "#121212" }}
                   >
-                    {/* ✉ */}
-                     <Mail className="w-4 h-4 text-black" strokeWidth={3} />
+                    <Mail className="w-4 h-4 text-black" strokeWidth={3} />
                   </div>
                   <h3 className="text-xl font-bold text-white">Email Us</h3>
                 </div>
@@ -89,7 +80,7 @@ export default function Contact() {
               </div>
 
               {/* Phone Section */}
-              <div className="p-8 rounded-2xl border border-gray-700" >
+              <div className="p-8 rounded-2xl border border-gray-700">
                 <div className="flex items-center gap-4 mb-4">
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-white text-xl"
@@ -103,16 +94,25 @@ export default function Contact() {
               </div>
 
               {/* Social Links */}
-              <div className="p-8 rounded-2xl border border-gray-700" >
+              <div className="p-8 rounded-2xl border border-gray-700">
                 <h3 className="text-xl font-bold text-white mb-4">Social Links</h3>
                 <ul className="space-y-2 text-gray-300">
-                  <li className="hover:opacity-75 cursor-pointer transition-all" style={{ color: "#F6E58B" }}>
+                  <li
+                    className="hover:opacity-75 cursor-pointer transition-all"
+                    style={{ color: "#F6E58B" }}
+                  >
                     Instagram
                   </li>
-                  <li className="hover:opacity-75 cursor-pointer transition-all" style={{ color: "#F6E58B" }}>
+                  <li
+                    className="hover:opacity-75 cursor-pointer transition-all"
+                    style={{ color: "#F6E58B" }}
+                  >
                     LinkedIn
                   </li>
-                  <li className="hover:opacity-75 cursor-pointer transition-all" style={{ color: "#F6E58B" }}>
+                  <li
+                    className="hover:opacity-75 cursor-pointer transition-all"
+                    style={{ color: "#F6E58B" }}
+                  >
                     X (Twitter)
                   </li>
                 </ul>
@@ -120,7 +120,10 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="p-8  border border-gray-700 rounded-2xl" style={{ backgroundColor: "#121212" }}>
+            <div
+              className="p-8 border border-gray-700 rounded-2xl"
+              style={{ backgroundColor: "#121212" }}
+            >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -132,7 +135,11 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="John Doe"
                       className="w-full text-white px-4 py-2 rounded-2xl border border-gray-600 focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#1A1A1A", borderColor: "#404040", borderWidth: "1px" }}
+                      style={{
+                        backgroundColor: "#1A1A1A",
+                        borderColor: "#404040",
+                        borderWidth: "1px",
+                      }}
                       onFocus={(e) => (e.target.style.borderColor = "#F6E58B")}
                       onBlur={(e) => (e.target.style.borderColor = "#404040")}
                     />
@@ -146,14 +153,18 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="Cardiologist"
                       className="w-full text-white px-4 py-2 rounded-2xl border focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#2F2F2F", borderColor: "#404040", borderWidth: "1px" }}
+                      style={{
+                        backgroundColor: "#2F2F2F",
+                        borderColor: "#404040",
+                        borderWidth: "1px",
+                      }}
                       onFocus={(e) => (e.target.style.borderColor = "#F6E58B")}
                       onBlur={(e) => (e.target.style.borderColor = "#404040")}
                     />
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4 ">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-white font-semibold mb-2">Email</label>
                     <input
@@ -163,7 +174,11 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="john@example.com"
                       className="w-full text-white px-4 py-2 rounded-2xl border focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#2F2F2F", borderColor: "#404040", borderWidth: "1px" }}
+                      style={{
+                        backgroundColor: "#2F2F2F",
+                        borderColor: "#404040",
+                        borderWidth: "1px",
+                      }}
                       onFocus={(e) => (e.target.style.borderColor = "#F6E58B")}
                       onBlur={(e) => (e.target.style.borderColor = "#404040")}
                     />
@@ -177,7 +192,11 @@ export default function Contact() {
                       onChange={handleChange}
                       placeholder="+234 XXX XXXX XXX"
                       className="w-full text-white px-4 py-2 rounded-2xl border focus:outline-none transition-colors"
-                      style={{ backgroundColor: "#2F2F2F", borderColor: "#404040", borderWidth: "1px" }}
+                      style={{
+                        backgroundColor: "#2F2F2F",
+                        borderColor: "#404040",
+                        borderWidth: "1px",
+                      }}
                       onFocus={(e) => (e.target.style.borderColor = "#F6E58B")}
                       onBlur={(e) => (e.target.style.borderColor = "#404040")}
                     />
@@ -193,7 +212,11 @@ export default function Contact() {
                     placeholder="Tell us more about your inquiry..."
                     rows={4}
                     className="w-full text-white px-4 py-2 rounded-2xl border focus:outline-none transition-colors resize-none"
-                    style={{ backgroundColor: "#2F2F2F", borderColor: "#404040", borderWidth: "1px" }}
+                    style={{
+                      backgroundColor: "#2F2F2F",
+                      borderColor: "#404040",
+                      borderWidth: "1px",
+                    }}
                     onFocus={(e) => (e.target.style.borderColor = "#F6E58B")}
                     onBlur={(e) => (e.target.style.borderColor = "#404040")}
                   ></textarea>
@@ -211,7 +234,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

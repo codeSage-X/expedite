@@ -15,21 +15,21 @@ const whyCards: WhyCard[] = [
     title: "Lifestyle That Fits You",
     description:
       "Work in new cities or return to favorites. Build your schedule around your life — not the other way around.",
-    image: "/male-doctor-teaching-child-lifestyle.jpg",
+    image: "/lifestyle.png",
   },
   {
     number: "2",
     title: "Better Pay, Fewer Barriers",
     description:
       "Competitive compensation with transparent terms. No hidden fees. Just straightforward partnerships built on trust and fair value.",
-    image: "/surgeon-in-operating-room-surgery.jpg",
+    image: "/better_pay.png",
   },
   {
     number: "3",
     title: "Trust, Not Transactions",
     description:
       "Dedicated support from real people who understand your needs. We're partners in your career, not just a middleman.",
-    image: "/hospital-professional-healthcare-environment.jpg",
+    image: "/trust.png",
   },
 ]
 

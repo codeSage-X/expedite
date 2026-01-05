@@ -8,6 +8,7 @@ import { PhysiciansSection } from "@/components/physictians-section"
 import { WorkLifeBalanceSection } from "@/components/work-life-balance"
 import { Footer } from "@/components/footer"
 import { useEffect } from "react"
+import Link from "next/link"
 // import { useRouter } from 'next/router';
 
 
@@ -51,9 +52,12 @@ export default function Home() {
           with luxury travel and full-service support.
         </p>
 
-        <button className="bg-[#C29343] hover:bg-yellow-700 text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-[10px] font-semibold text-sm sm:text-base md:text-lg transition transform hover:scale-105 font-outfit">
-          Start your Journey here
-        </button>
+       <Link 
+            href="/contact"
+            className="bg-[#C29343] hover:bg-yellow-700 text-white px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-[10px] font-semibold text-sm sm:text-base md:text-lg lg:text-xl transition transform hover:scale-105 font-outfit inline-block"
+          >
+            Start your Journey here
+          </Link>
       </div>
     </div>
   </div>
